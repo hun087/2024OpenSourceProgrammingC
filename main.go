@@ -15,6 +15,7 @@ func main() {
 	//i = 55
 
 	i := 55
+	//i := "55"
 	f := 3.99
 	fmt.Println(reflect.TypeOf(i), reflect.TypeOf(f))
 	fmt.Println(f, math.Ceil(3.49))
