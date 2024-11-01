@@ -22,18 +22,21 @@ func main() {
 		log.Fatal(err)
 	}
 
-	//counts := 0
-	var isPrime bool = true // 가독성 up, 메모리 down (is가 붙으면 true, false가 나옴 - flag 변수)
-	j := 2
-	for j < n {
-		if n%j == 0 {
-			//counts = counts + 1
-			isPrime = false // 더하기 연산 제거
+	var isPrime bool = true
+	// bug fix
+	if n <= 1 { // 1보다 큰 자연수 중 1과 자기 자신만을 약수로 가지는 수
+		isPrime = false
+	} else {
+		j := 2
+		for j < n {
+			if n%j == 0 {
+				isPrime = false
+			}
+			j++
 		}
-		j++
 	}
-	//if counts == 0
-	if isPrime { // == 비교 연산 제거
+
+	if isPrime {
 		fmt.Printf("%d is prime number.", n)
 	} else {
 		fmt.Printf("%d is NOT prime number.", n)
