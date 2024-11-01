@@ -25,20 +25,24 @@ func main() {
 	}
 
 	var isPrime bool = true
-	// bug fix
-	if n <= 1 { // 1보다 큰 자연수 중 1과 자기 자신만을 약수로 가지는 수이다
+	if n <= 1 {
+		isPrime = false
+	} else if n == 2 {
+		isPrime = true
+	} else if n%2 == 0 {
 		isPrime = false
 	} else {
 		j := 2
 		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				isPrime = false
-				break // performance up
+				break
 			}
-			fmt.Printf("%d ", j) // Check j loop
+			fmt.Printf("%d ", j)
 			j++
 		}
 	}
+
 	if isPrime {
 		fmt.Printf("%d is prime number.", n)
 	} else {
