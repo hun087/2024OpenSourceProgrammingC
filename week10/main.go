@@ -24,7 +24,7 @@ func main() {
 
 	var isPrime bool = true
 	// bug fix
-	if n <= 1 { // 1보다 큰 자연수 중 1과 자기 자신만을 약수로 가지는 수
+	if n <= 1 { // 1보다 큰 자연수 중 1과 자기 자신만을 약수로 가지는 수이다
 		isPrime = false
 	} else {
 		j := 2
@@ -35,7 +35,6 @@ func main() {
 			j++
 		}
 	}
-
 	if isPrime {
 		fmt.Printf("%d is prime number.", n)
 	} else {
