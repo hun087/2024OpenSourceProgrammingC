@@ -10,10 +10,9 @@ type visitor struct {
 func calculateCost(visitors []visitor) int {
 	// visitors : 구조체 슬라이스
 	totalCost := 0
-	for _, v := range visitors { // v - 구조체
+	for _, v := range visitors {
 		totalCost = totalCost + v.cost
 	}
-
 	return totalCost
 }
 
@@ -29,11 +28,12 @@ func main() {
 		fmt.Print("Input age : ")
 		fmt.Scan(&age)
 
-		if age < 12 {
+		switch {
+		case age < 12:
 			vs[i] = visitor{age: age, cost: 5000}
-		} else if age >= 12 && age < 65 {
-			vs[i] = visitor{age: age, cost: 10000}
-		} else {
+		case age >= 12 && age < 65:
+			vs[i] = visitor{age: age, cost: 5000}
+		default:
 			vs[i] = visitor{age: age, cost: 7000}
 		}
 	}
