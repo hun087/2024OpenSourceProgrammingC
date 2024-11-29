@@ -10,7 +10,7 @@ type visitor struct {
 func calculateCost(visitors []visitor) int {
 	// visitors : 구조체 슬라이스
 	totalCost := 0
-	for _, v := range visitors {
+	for _, v := range visitors { // v - 구조체
 		totalCost = totalCost + v.cost
 	}
 	return totalCost
